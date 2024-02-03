@@ -1,0 +1,50 @@
+WindowManager:
+    Window1:
+    Window2:
+
+<Window1>:
+    name:'Login'
+    GridLayout:
+        cols:1
+        GridLayout:
+            rows:4
+            Image:
+                source:'login.png'
+                
+            Label:
+                text:'USER LOGIN'
+                color:(1,1,1)
+                font_size:60
+            GridLayout:
+                rows:4
+                Label:
+                    text:'Entre your username:'
+                    halign: 'left'
+                TextInput:
+                    id:username
+                    size_hint:(0.1,0.4)
+                    multiline:False
+                Label:
+                    text:'Entre your password:'
+                    halign: 'left'
+                TextInput:
+                    id:password
+                    size_hint:(0.1,0.4)
+                    multiline:False
+            Button:
+                text:'login'
+                size_hint:(0.3,0.3)
+                background_color:(0,2.5,0)
+                on_release:
+                    app.root.current='Window2' if username.text=='jalim' and password.text=='jalim123'  else 'Login'
+                    root.manager.transition.direction='up'
+           
+                
+                
+<Window2>:
+    name:'Window2'
+    Label:
+        text:'hello jalim'
+        font_size:50
+
+
